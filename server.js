@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables from .env
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
@@ -7,27 +7,25 @@ const crypto = require('crypto');
 const app = express();
 const port = 3000;
 
-// In-memory store for codes (use Redis/database in production)
 const codes = {};
 
-// Configure NodeMailer transporter
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Fetch from .env
-    pass: process.env.EMAIL_PASS  // Fetch from .env
+    user: process.env.EMAIL_USER, //add by using .env  
+    pass: process.env.EMAIL_PASS  //add by using .env
   }
 });
 
-// Middleware
+
 app.use(bodyParser.json());
 
-// Generate a random 6-digit code
+
 function generateCode() {
   return crypto.randomInt(100000, 999999).toString();
 }
 
-// Send verification email
 async function sendVerificationEmail(email, code) {
   const mailOptions = {
     from: process.env.EMAIL_USER,
@@ -46,7 +44,6 @@ async function sendVerificationEmail(email, code) {
   }
 }
 
-// Request code endpoint
 app.post('/auth/request', async (req, res) => {
   const { email } = req.body;
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -66,7 +63,6 @@ app.post('/auth/request', async (req, res) => {
   res.json({ message: 'Verification code sent' });
 });
 
-// Verify code endpoint
 app.post('/auth/verify', (req, res) => {
   const { email, code } = req.body;
   if (!email || !code) {
@@ -78,13 +74,12 @@ app.post('/auth/verify', (req, res) => {
   }
 
   const stored = codes[email];
-  // Check if code is expired (1 minute = 60,000 ms)
+
   if (Date.now() - stored.timestamp > 60000) {
     delete codes[email];
     return res.status(400).json({ error: 'Code expired' });
   }
 
-  // Increment attempts
   stored.attempts += 1;
   if (stored.attempts > 5) {
     delete codes[email];
@@ -92,14 +87,13 @@ app.post('/auth/verify', (req, res) => {
   }
 
   if (stored.code === code) {
-    delete codes[email]; // Clear code after successful verification
+    delete codes[email]; 
     return res.json({ success: true });
   } else {
     return res.json({ success: false });
   }
 });
 
-// Start server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
