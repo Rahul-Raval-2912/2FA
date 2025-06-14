@@ -2,6 +2,8 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+'''right now i made this project only for use in another bigger projects but i put public link in few time'''
+
 def create_session():
 
     session = requests.Session()
