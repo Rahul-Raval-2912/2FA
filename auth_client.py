@@ -3,25 +3,14 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 def create_session():
-    """
-    Create a requests session with retry logic.
-    Returns:
-        requests.Session: Configured session.
-    """
+
     session = requests.Session()
     retries = Retry(total=3, backoff_factor=1, status_forcelist=[500, 502, 503, 504])
     session.mount('http://', HTTPAdapter(max_retries=retries))
     return session
 
 def request_code(email, api_url="http://localhost:3000"):
-    """
-    Request a verification code for the given email.
-    Args:
-        email (str): User's email address.
-        api_url (str): Base URL of the Express.js API.
-    Returns:
-        bool: True if code request succeeds, False otherwise.
-    """
+
     session = create_session()
     try:
         response = session.post(f"{api_url}/auth/request", json={"email": email}, timeout=10)
@@ -36,15 +25,7 @@ def request_code(email, api_url="http://localhost:3000"):
         return False
 
 def authenticate(email, code, api_url="http://localhost:3000"):
-    """
-    Verify a code for the given email without requesting a new code.
-    Args:
-        email (str): User's email address.
-        code (str): Verification code entered by the user.
-        api_url (str): Base URL of the Express.js API.
-    Returns:
-        bool: True if verification succeeds, False otherwise.
-    """
+
     if not email or not code:
         print("Email and code are required")
         return False
@@ -65,16 +46,7 @@ def authenticate(email, code, api_url="http://localhost:3000"):
         return False
 
 def authenticate_with_retries(email, max_attempts=5, api_url="http://localhost:3000"):
-    """
-    Request a code and allow up to max_attempts to verify it.
-    Args:
-        email (str): User's email address.
-        max_attempts (int): Maximum verification attempts.
-        api_url (str): Base URL of the Express.js API.
-    Returns:
-        bool: True if authentication succeeds, False otherwise.
-    """
-    # Request a single code
+    
     if not request_code(email, api_url):
         return False
 
