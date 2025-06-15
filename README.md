@@ -51,8 +51,8 @@ two-way-veri/
 ├── .gitignore
 ├── auth_client.py
 ├── README.md
-
-
+```
+---
 
 ````markdown``
 
@@ -66,7 +66,6 @@ two-way-veri/
 
 ### Backend
 
-```
 ```bash
 git clone https://github.com/Rahul-Raval-2912/2FA.git
 cd 2FA
@@ -80,7 +79,7 @@ cp .env.example .env (edit as example.env)
 - pip install requests
 - cd python
 - python auth_client.py
-
+```
 
 ```markdown
 ## Usage
