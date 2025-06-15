@@ -37,45 +37,42 @@ two-way-veri/
 ## Installation
 ### Backend
 Clone the repo:
-git clone https://github.com/Rahul-Raval-2912/2FA.git
-cd 2FA
-npm install
-cp .env.example .env
+- git clone https://github.com/Rahul-Raval-2912/2FA.git
+- cd 2FA
+- npm install
+- cp .env.example .env
 (Edit .env with your credentials)
-node server.js
+- node server.js
 
 ### python client
-pip install requests
-python python/auth_client.py
+- pip install requests
+- python python/auth_client.py
 
 ### Usage
-from python.auth_client import authenticate_with_retries
+- from python.auth_client import authenticate_with_retries
 
-if authenticate_with_retries("your-email@example.com"):
-    print("Access granted")
-else:
-    print("Access denied")
+- if authenticate_with_retries("your-email@example.com"):
+-    print("Access granted")
+- else:
+-    print("Access denied")
+
+
 ## APi Endpoint
 ### POST/auth/request
-{ "email": "user@example.com" }
-###POST/auth/verify
-{ "email": "user@example.com", "code": "123456" }
+- { "email": "user@example.com" }
+
+### POST/auth/verify
+- { "email": "user@example.com", "code": "123456" }
 
 ### Security
-Store credentials in .env (never commit to GitHub).
-Use Gmail app-specific password.
-Add rate-limiting for brute force protection.
+- Store credentials in .env (never commit to GitHub).
+- Use Gmail app-specific password.
+- Add rate-limiting for brute force protection.
 
 ```
 ```
-git clone https://github.com/Rahul-Raval-2912/2FA.git
-cd 2FA
-npm install
 
 
-
-
-===============================
 ```markdown
 ```
 # Security Policy
