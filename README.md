@@ -54,7 +54,7 @@ two-way-veri/
 ```
 ---
 
-````markdown``
+
 
 ##  **PREREQUISITES**
 
@@ -73,7 +73,7 @@ npm install
 cp .env.example .env (edit as example.env)
 
 ```
- ###Python Client
+ ### Python Client
  
 ```cmd
 - pip install requests
@@ -81,11 +81,11 @@ cp .env.example .env (edit as example.env)
 - python auth_client.py
 ```
 
-```markdown
+
 ## Usage
 
 Example Python integration:
-```
+
 ```python
 from auth_client import authenticate_with_retries
 
