@@ -1,3 +1,6 @@
+// 2FA - JavaScript logic for two-factor authentication
+// Copyright (c) 2025 Rahul Raval
+// Licensed under the MIT License. See LICENSE file in the project root for details.
 require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');

@@ -1,3 +1,6 @@
+# 2FA - A Flask-based two-factor authentication implementation
+# Copyright (c) 2025 Rahul Raval
+# Licensed under the MIT License. See LICENSE file in the project root for details.
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
