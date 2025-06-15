@@ -33,7 +33,7 @@ two-way-veri/
 ├── .gitignore                 
 ├── auth_client.py           
 ├── README.md           
-
+```
 ## Installation
 ### Backend
 Clone the repo:
@@ -66,7 +66,8 @@ Store credentials in .env (never commit to GitHub).
 Use Gmail app-specific password.
 Add rate-limiting for brute force protection.
 
-```bash
+```
+```
 git clone https://github.com/Rahul-Raval-2912/2FA.git
 cd 2FA
 npm install
@@ -76,6 +77,7 @@ npm install
 
 ===============================
 ```markdown
+```
 # Security Policy
 
 ## Supported Versions
