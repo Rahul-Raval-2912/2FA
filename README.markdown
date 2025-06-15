@@ -46,11 +46,8 @@ A secure email-based two-way authorization system built with **Express.js** and 
 two-way-veri/
 ├── server.js           
 ├── .env.example        
-├── .gitignore          
-├── package.json        
-├── python/
-│   ├── auth_client.py  
-│   └── main.py         
+├── .gitignore              
+├── auth_client.py      
 ├── README.md           
 ```
 
