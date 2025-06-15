@@ -1,24 +1,28 @@
 # Two-Way Email Verification System
 
+![Project Status](https://img.shields.io/badge/status-active-brightgreen.svg)
+
 A secure email-based two-way authorization system built with **Express.js** and **NodeMailer**, designed for integration with Python projects like `Git_Repo_Scanner`. It sends a 6-digit verification code via email, allowing up to **5 attempts within a 1-minute expiration period**, returning `True` or `False` based on verification success.
 
-> 🔗 **GitHub Repository:** Two-Way Email Verification System
+> 🔗 **GitHub Repository:** [Two-Way Email Verification System](https://github.com/Rahul-Raval-2912/2FA)
+
+**Last Updated:** 01:56 PM IST on Sunday, June 15, 2025
 
 ---
 
 ## Table of Contents
 
-- Features
-- Tech Stack
-- Project Structure
-- Prerequisites
-- Installation
-- Usage
-- API Endpoints
-- Security
-- Security Policy
-- Contributing
-- License
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Security](#security)
+- [Security Policy](#security-policy)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -48,6 +52,8 @@ two-way-veri/
 ├── .env.example        
 ├── .gitignore              
 ├── auth_client.py      
+├── main.py
+├── LICENSE
 ├── README.md           
 ```
 
@@ -156,9 +162,9 @@ python main.py
 
 ### Supported Versions
 
-| Version | Supported |
-| --- | --- |
-| 1.0.0 | Fully Supported |
+| Version | Supported        |
+|---------|------------------|
+| 1.0.0   | Fully Supported  |
 
 ### Reporting a Vulnerability
 
@@ -188,4 +194,6 @@ python main.py
 
 ## License
 
-MIT License. See LICENSE file.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
