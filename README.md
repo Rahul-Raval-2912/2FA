@@ -54,12 +54,10 @@ two-way-veri/
 
 
 
-```
+````markdown``
 
 ##  **PREREQUISITES**
 
-
-## Prerequisites
 - Node.js (v14+), npm
 - Python (v3.6+), pip
 - Gmail account with app-specific password
@@ -67,34 +65,35 @@ two-way-veri/
 ## Installation
 
 ### Backend
-```markdown
-```
 
+```
+```bash
 git clone https://github.com/Rahul-Raval-2912/2FA.git
 cd 2FA
 npm install
 cp .env.example .env (edit as example.env)
-```bash
+
 ```
  ###Python Client
+ 
+```cmd
 - pip install requests
 - cd python
 - python auth_client.py
 
-```markdown
 
-```
+```markdown
 ## Usage
 
 Example Python integration:
-```markdown
 ```
+```python
 from auth_client import authenticate_with_retries
 
 if authenticate_with_retries("your-email@example.com"):
     print("Access granted")
 else:
     print("Access denied")
-```python
+```
 
 
